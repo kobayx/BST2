@@ -142,13 +142,13 @@ inline Value & BST<Key, Value>::Node::value()
 }
 
 template<typename Key, typename Value>
-inline Node * BST<Key, Value>::Node::left()
+inline typename BST<Key, Value>::Node * BST<Key, Value>::Node::left()
 {
 	return left_;
 }
 
 template<typename Key, typename Value>
-inline Node * BST<Key, Value>::Node::right()
+inline typename BST<Key, Value>::Node * BST<Key, Value>::Node::right()
 {
 	return right_;
 }
@@ -177,5 +177,6 @@ inline int & BST<Key, Value>::Node::lookup(const Key key)
 			return right_->lookup(key);
 		}
 	}
+return value();
 }
 #endif
