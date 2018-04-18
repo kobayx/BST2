@@ -1,0 +1,10 @@
+#!/bin/bash
+#Created by Drew Loukusa on 4/15/17
+
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do
+    echo $i Starting
+    ./wordgen $i 8 | sort > temp
+    { time ./bst-op < temp>>/dev/null; } 2>>bst-o-s-times
+    echo $i Ended
+done
